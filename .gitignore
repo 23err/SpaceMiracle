@@ -1,4 +1,8 @@
 
+
+# secret keys file
+apikey.properties
+
 # Created by https://www.toptal.com/developers/gitignore/api/kotlin,android,androidstudio
 # Edit at https://www.toptal.com/developers/gitignore?templates=kotlin,android,androidstudio
 
