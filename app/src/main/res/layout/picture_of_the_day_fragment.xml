@@ -34,6 +34,34 @@
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cgDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipDayBefore"
+                    style="@style/ChipChoise"
+                    android:text="@string/day_before" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipYesterday"
+                    style="@style/ChipChoise"
+                    android:text="@string/yesterday" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipToday"
+                    style="@style/ChipChoise"
+                    android:checked="true"
+                    android:text="@string/today" />
+
+
+            </com.google.android.material.chip.ChipGroup>
+
+
             <com.example.spacemiracle.EquilateralImageView
                 android:id="@+id/ivPhotoOfDay"
                 android:layout_width="match_parent"

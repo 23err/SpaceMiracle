@@ -9,11 +9,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import coil.api.load
 import com.example.spacemiracle.databinding.PictureOfTheDayFragmentBinding
 import com.example.spacemiracle.repository.PictureOfTheDayData
+import com.google.android.material.chip.Chip
 import com.google.android.material.snackbar.Snackbar
 
 class PictureOfTheDayFragment : Fragment() {
@@ -44,6 +46,24 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        wikiSetClickListener()
+        setChipClickListener()
+    }
+
+    private fun setChipClickListener() {
+        binding.cgDay.setOnCheckedChangeListener { chipGroup, position ->
+            chipGroup.findViewById<Chip>(position)?.let {
+                Log.d(TAG, "onViewCreated: ${it.id}")
+                when (it.id) {
+                    R.id.chipDayBefore -> viewModel.getData(PODViewModel.Day.BEFORE_DAY)
+                    R.id.chipYesterday -> viewModel.getData(PODViewModel.Day.YESTERDAY)
+                    R.id.chipToday -> viewModel.getData()
+                }
+            }
+        }
+    }
+
+    private fun wikiSetClickListener() {
         binding.tilWiki.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse("https://en.wikipedia.org/wiki/${binding.etWiki.text.toString()}")

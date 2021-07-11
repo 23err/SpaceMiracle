@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <attr name="loadingBackground" format="color|reference"/>
+    <attr name="loadingBackground" format="color|reference" />
+
     <style name="Theme.SpaceMiracle" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
@@ -14,5 +15,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="loadingBackground">@color/opac_gray_200</item>
+    </style>
+
+    <style name="ChipChoise" parent="Widget.MaterialComponents.Chip.Choice">
+
+        <item name="iconStartPadding">@dimen/chip_icon_padding</item>
+        <item name="chipIcon">@drawable/ic_calendar</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
     </style>
 </resources>
