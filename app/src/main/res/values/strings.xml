@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SpaceMiracle</string>
+    <string name="title">Title</string>
+    <string name="description">description</string>
+    <string name="search_in_wiki">Поиск в Википедии</string>
+    <string name="yesterday">Вчера</string>
+    <string name="today">Сегодня</string>
+    <string name="tomorrow">Завтра</string>
+    <string name="day_before">Позавчера</string>
 </resources>
