@@ -5,4 +5,5 @@
     <dimen name="text_padding">10dp</dimen>
     <dimen name="scroll_view_chips_padding_hor">10dp</dimen>
     <dimen name="chip_icon_padding">5dp</dimen>
+    <dimen name="fragment_padding">20dp</dimen>
 </resources>
