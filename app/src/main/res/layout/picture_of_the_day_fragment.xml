@@ -17,7 +17,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilWiki"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/title_margin_bottom"
@@ -80,6 +80,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/title_margin_bottom"
+                    android:fontFamily="@font/audiowide"
                     android:textSize="@dimen/title_text_size"
                     tools:text="@string/title" />
 
@@ -90,6 +91,7 @@
                     tools:text="@string/description" />
 
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
