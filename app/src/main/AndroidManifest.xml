@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/ThemeRed">
-        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".MotionActivity"></activity>
+        <activity
+            android:name=".SwipeBehaviorActivity"
+            android:label="@string/title_activity_swipe_behavior"
+            android:theme="@style/ThemeRed.NoActionBar" />
+        <activity android:name=".CoordinatorLayoutActivity" />
+        <activity android:name=".ThirdActivity" />
+        <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

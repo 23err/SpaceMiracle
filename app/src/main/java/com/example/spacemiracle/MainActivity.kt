@@ -54,6 +54,23 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, SecondActivity::class.java))
                 return true
             }
+
+            R.id.menu_third_activity ->{
+                startActivity(Intent(this, ThirdActivity::class.java))
+                return true
+            }
+            R.id.menu_coordinator_activity ->{
+                startActivity(Intent(this, CoordinatorLayoutActivity::class.java))
+                return true
+            }
+            R.id.menu_swipe_activity ->{
+                startActivity(Intent(this, SwipeBehaviorActivity::class.java))
+                return true
+            }
+            R.id.menu_motion_activity ->{
+                startActivity(Intent(this, MotionActivity::class.java))
+                return true
+            }
         }
 
         return super.onOptionsItemSelected(item)

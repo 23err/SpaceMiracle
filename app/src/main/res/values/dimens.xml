@@ -9,4 +9,12 @@
     <dimen name="image_padding">30dp</dimen>
     <dimen name="swipe_ind_size">8dp</dimen>
     <dimen name="indicator_height">48dp</dimen>
+    <dimen name="tv_vertical_margin">20dp</dimen>
+    <dimen name="floating_margin">20dp</dimen>
+    <dimen name="appbar_layout_height">300dp</dimen>
+    <dimen name="label_margin">20dp</dimen>
+    <dimen name="second_label_margin_top">70dp</dimen>
+    <dimen name="label_text_size">30sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="cardview_padding">20dp</dimen>
 </resources>

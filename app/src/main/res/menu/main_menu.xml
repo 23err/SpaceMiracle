@@ -10,4 +10,21 @@
         android:id="@+id/menu_second_activity"
         android:title="@string/second_activity"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_third_activity"
+        android:title="@string/constraint_layout"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_coordinator_activity"
+        android:title="@string/coordinator_layout"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_swipe_activity"
+        android:title="@string/swipe_behavior"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_motion_activity"
+        android:title="@string/motion_layout"
+        app:showAsAction="never" />
 </menu>
