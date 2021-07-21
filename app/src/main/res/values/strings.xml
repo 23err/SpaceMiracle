@@ -13,4 +13,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="setting">Настройки</string>
+    <string name="second_activity">Вторая активити</string>
+    <string name="fullname_camera">Полное назнание камеры</string>
+    <string name="sol">Сол</string>
+    <string name="earth_date">Дата на земле</string>
 </resources>

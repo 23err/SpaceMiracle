@@ -1,6 +1,7 @@
 package com.example.spacemiracle
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         findViews()
         setBadge()
         setupNavController()
+        
 
     }
 
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
         when (item.itemId) {
             R.id.menu_setting -> {
                 val fragment = SettingFragment.newInstance()
@@ -45,6 +48,10 @@ class MainActivity : AppCompatActivity() {
                     .add(R.id.fragmentContainer, fragment)
                     .addToBackStack("null")
                     .commit()
+                return true
+            }
+            R.id.menu_second_activity -> {
+                startActivity(Intent(this, SecondActivity::class.java))
                 return true
             }
         }

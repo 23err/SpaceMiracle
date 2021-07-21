@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    tools:context=".EarthFragment">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/MarsViewPager"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:padding="@dimen/image_padding"
+        android:src="@drawable/earth" />
+
 </FrameLayout>

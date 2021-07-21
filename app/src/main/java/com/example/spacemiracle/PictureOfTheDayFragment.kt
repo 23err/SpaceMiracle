@@ -55,8 +55,8 @@ class PictureOfTheDayFragment : Fragment() {
             chipGroup.findViewById<Chip>(position)?.let {
                 Log.d(TAG, "onViewCreated: ${it.id}")
                 when (it.id) {
-                    R.id.chipDayBefore -> viewModel.getData(PODViewModel.Day.BEFORE_DAY)
-                    R.id.chipYesterday -> viewModel.getData(PODViewModel.Day.YESTERDAY)
+                    R.id.chipDayBefore -> viewModel.getData(Day.BEFORE_DAY)
+                    R.id.chipYesterday -> viewModel.getData(Day.YESTERDAY)
                     R.id.chipToday -> viewModel.getData()
                 }
             }
