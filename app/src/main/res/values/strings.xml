@@ -17,4 +17,22 @@
     <string name="fullname_camera">Полное назнание камеры</string>
     <string name="sol">Сол</string>
     <string name="earth_date">Дата на земле</string>
+    <string name="third_activity">Третья активити</string>
+    <string name="constraint_layout">Constraint layout</string>
+    <string name="some_label">some label</string>
+    <string name="coordinator_test_text">akjsdlfk alskdhfkajshd adf asdljkfhalskjdhf asjhdfljkashdfl kasdjf alsjkhdflkjashdfwqhefjkasdhfkljashdfljas ldkfjhas lkjdfh aslkjdhflkjaflhsdfasdflkasdflasld fjals;kjdflkasjdflkjas dlfjkas ldfkjaslkjdf askldf lkasjdf;kajsdfl;kjas;lkdfjas;kldjf;askjdf;lkasjdfoiqwethjkgndsfgljksebglkjsdhf gl</string>
+    <string name="second_label">second label</string>
+    <string name="title_activity_swipe_behavior">SwipeBehaviorActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="label1">Label1</string>
+    <string name="swipe_behavior">Swipe behavior</string>
+    <string name="coordinator_layout">Coordinator layout</string>
+    <string name="motion_layout">Motion layout</string>
 </resources>
