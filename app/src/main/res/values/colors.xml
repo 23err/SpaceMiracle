@@ -7,4 +7,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="opac_gray_200">#C9D1D1D1</color>
+
+<!--    green theme colors-->
+    <color name="green_700">#00796b</color>
+    <color name="green_500">#48a999</color>
+    <color name="green_300">#4db6ac</color>
+
+<!--    red theme color-->
+    <color name="red_800">#d60000</color>
+    <color name="red_500">#ff5131</color>
+    <color name="red_900">#9c0000</color>
+    <color name="peach_500">#ff8a80</color>
+    <color name="peach_300">#ffbcaf</color>
+    <color name="peach_900">#c85a54</color>
 </resources>

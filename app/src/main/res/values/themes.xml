@@ -1,5 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    <attr name="loadingBackground" format="color|reference" />
+
+
     <style name="Theme.SpaceMiracle" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
@@ -12,5 +15,61 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="loadingBackground">@color/opac_gray_200</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.SmallAppearance</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.MediumComponent</item>
+    </style>
+
+    <style name="ThemeGreen" parent="Theme.SpaceMiracle">
+        <item name="colorPrimary">@color/green_700</item>
+        <item name="colorPrimaryVariant">@color/green_500</item>
+        <item name="colorSecondary">@color/green_300</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <style name="ThemeRed" parent="Theme.SpaceMiracle">
+        <item name="colorPrimary">@color/red_800</item>
+        <item name="colorPrimaryVariant">@color/red_500</item>
+        <item name="colorSecondary">@color/peach_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <style name="ChipChoise" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="iconStartPadding">@dimen/chip_icon_padding</item>
+        <item name="chipIcon">@drawable/ic_calendar</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:elevation">3dp</item>
+        <item name="android:textAppearance">@style/AppTextApperance.Chip</item>
+
+    </style>
+
+    <style name="AppShapeAppearance.SmallAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamilyTopLeft">cut</item>
+        <item name="cornerSize">4dp</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+    </style>
+
+    <style name="AppShapeAppearance.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamilyTopLeft">cut</item>
+        <item name="cornerSize">4dp</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+    </style>
+
+
+    <style name="AppTextApperance.Chip" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+
+    <style name="AppButton.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconTint">@color/black</item>
+        <item name="rippleColor">@color/red_800</item>
+        <item name="strokeColor">@color/opac_gray_200</item>
+        <item name="strokeWidth">2dp</item>
+
     </style>
 </resources>
