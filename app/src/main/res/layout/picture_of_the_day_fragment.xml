@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragmentContainer"
     tools:context=".PictureOfTheDayFragment">
 
     <ScrollView
@@ -14,25 +15,40 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilWiki"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/title_margin_bottom"
-                android:hint="@string/search_in_wiki"
-                app:counterEnabled="true"
-                app:counterMaxLength="30"
-                app:endIconCheckable="true"
-                app:endIconDrawable="@drawable/ic_wikipedia_s_w"
-                app:endIconMode="custom">
+                android:layout_height="match_parent"
+                >
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etWiki"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilWiki"
+                    android:visibility="invisible"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/title_margin_bottom"
+                    android:hint="@string/search_in_wiki"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="30"
+                    app:endIconCheckable="true"
+                    app:endIconDrawable="@drawable/ic_wikipedia_s_w"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etWiki"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageWiki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="17dp"
+                    android:layout_marginTop="20dp"
+                    app:srcCompat="@drawable/ic_wikipedia_s_w" />
+            </FrameLayout>
 
 
             <com.google.android.material.chip.ChipGroup
