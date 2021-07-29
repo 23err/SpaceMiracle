@@ -4,17 +4,19 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationMenu
+import androidx.transition.Fade
+import androidx.transition.Slide
+import androidx.transition.TransitionManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -69,6 +71,34 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.menu_motion_activity ->{
                 startActivity(Intent(this, MotionActivity::class.java))
+                return true
+            }
+            R.id.menu_animation_activity ->{
+                startActivity(Intent(this, AnimationActivity::class.java))
+                return true
+            }
+            R.id.menu_change_image_transform_activity ->{
+                startActivity(Intent(this, ChangeImageTransformActivity::class.java))
+                return true
+            }
+            R.id.menu_animation_path_activity ->{
+                startActivity(Intent(this, AnimationPathActivity::class.java))
+                return true
+            }
+            R.id.menu_mixing_activity ->{
+                startActivity(Intent(this, MixingActivity::class.java))
+                return true
+            }
+            R.id.menu_animation_object_activity ->{
+                startActivity(Intent(this, AnimationObjectActivity::class.java))
+                return true
+            }
+            R.id.menu_constraint_set_activity ->{
+                startActivity(Intent(this, ConstraintSetActivity::class.java))
+                return true
+            }
+            R.id.menu_animated_vector_drawable_activity ->{
+                startActivity(Intent(this, AnimatedVectorDrawableActivity::class.java))
                 return true
             }
         }

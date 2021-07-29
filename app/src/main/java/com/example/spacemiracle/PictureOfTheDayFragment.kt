@@ -5,18 +5,23 @@ import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
+import androidx.transition.*
 import coil.api.load
 import com.example.spacemiracle.databinding.PictureOfTheDayFragmentBinding
 import com.example.spacemiracle.repository.PictureOfTheDayData
 import com.google.android.material.chip.Chip
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_mars_view_pager.*
+import kotlinx.android.synthetic.main.picture_of_the_day_fragment.*
 
 class PictureOfTheDayFragment : Fragment() {
 
@@ -28,6 +33,7 @@ class PictureOfTheDayFragment : Fragment() {
     private lateinit var viewModel: PODViewModel
     private var _binding: PictureOfTheDayFragmentBinding? = null
     private val binding get() = _binding!!
+    private var isExpandedPhoto = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +48,36 @@ class PictureOfTheDayFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(PODViewModel::class.java)
         viewModel.getData()
             .observe(viewLifecycleOwner, Observer<PictureOfTheDayData> { renderData(it) })
+        setImageViewClickListener()
+
+        imageWiki.setOnClickListener{
+            TransitionManager.beginDelayedTransition(fragmentContainer, Slide(Gravity.END).setDuration(500))
+            it.visibility = View.INVISIBLE
+            tilWiki.visibility = View.VISIBLE
+        }
+    }
+
+    private fun setImageViewClickListener() {
+        ivPhotoOfDay.setOnClickListener {
+            isExpandedPhoto = !isExpandedPhoto
+            TransitionManager.beginDelayedTransition(
+                fragmentContainer,
+                TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+            )
+
+            val layoutParams = ivPhotoOfDay.layoutParams
+            layoutParams.apply {
+                if (isExpandedPhoto) {
+                    width = ViewGroup.LayoutParams.MATCH_PARENT
+                    ivPhotoOfDay.scaleType = ImageView.ScaleType.CENTER_CROP
+                } else {
+                    width = ViewGroup.LayoutParams.WRAP_CONTENT
+                    ivPhotoOfDay.scaleType = ImageView.ScaleType.FIT_CENTER
+                }
+            }
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -81,8 +117,10 @@ class PictureOfTheDayFragment : Fragment() {
             is PictureOfTheDayData.Success -> {
                 loadingVisible(false)
                 val serverResponseData = data.serverResponseData
-                tvTitle.text = serverResponseData.title
-                tvDescription.text = serverResponseData.explanation
+//                tvTitle.text = serverResponseData.title
+                tvTitle.animatedChangeText(fragmentContainer, serverResponseData.title)
+                tvDescription.animatedChangeText(fragmentContainer, serverResponseData.explanation)
+
                 val url = serverResponseData.url
                 if (url.isNullOrEmpty()) {
                     Log.d(TAG, "url picture is empty")
@@ -101,7 +139,7 @@ class PictureOfTheDayFragment : Fragment() {
                 loadingVisible(false)
                 data.error.message?.let {
                     Log.e(TAG, it)
-                    Snackbar.make(requireView(),it, Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(requireView(), it, Snackbar.LENGTH_LONG).show()
                 }
             }
         }

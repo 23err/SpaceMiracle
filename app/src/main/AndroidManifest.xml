@@ -11,7 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/ThemeRed">
-        <activity android:name=".MotionActivity"></activity>
+        <activity android:name=".AnimatedVectorDrawableActivity"></activity>
+        <activity android:name=".ConstraintSetActivity" />
+        <activity android:name=".StateListAnimatorActivity" />
+        <activity android:name=".AnimationObjectActivity" />
+        <activity android:name=".MixingActivity" />
+        <activity android:name=".AnimationPathActivity" />
+        <activity android:name=".ChangeImageTransformActivity" />
+        <activity android:name=".AnimationActivity" />
+        <activity android:name=".MotionActivity" />
         <activity
             android:name=".SwipeBehaviorActivity"
             android:label="@string/title_activity_swipe_behavior"

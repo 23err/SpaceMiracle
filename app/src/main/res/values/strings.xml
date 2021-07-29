@@ -35,4 +35,19 @@
     <string name="swipe_behavior">Swipe behavior</string>
     <string name="coordinator_layout">Coordinator layout</string>
     <string name="motion_layout">Motion layout</string>
+    <string name="animation_activity">Animation activity</string>
+    <string name="change_image_transform">Change Image Transform</string>
+    <string name="animation_path_transform">Animation path</string>
+    <string name="path">Path</string>
+    <string name="mixing_activity">Анимация перемешивания</string>
+    <string name="shuffle">shuffle</string>
+    <string name="animation_object">Animation object</string>
+    <string name="state_list_animator">StateListAnimator</string>
+    <string name="constraint_set">ConstraintSet</string>
+    <string name="animated_vector_drawable">Animated Vector Drawable</string>
+
+    <string name="pause_left">M26,23 V41</string>
+    <string name="pause_right">M37,23 L37,32 L37,41</string>
+    <string name="pause_right_play">M26,23 L41,32 L27,41</string>
+    <string name="clockwise_circle">M32,8 A24,24 0 1 1 31.99,8 z</string>
 </resources>
