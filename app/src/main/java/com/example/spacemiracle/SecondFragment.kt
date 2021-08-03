@@ -1,13 +1,14 @@
 package com.example.spacemiracle
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.spacemiracle.databinding.SecondFragmentBinding
-import com.example.spacemiracle.repository.MarsPicturesData
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.second_fragment.*
 
 class SecondFragment : Fragment() {
 
@@ -15,47 +16,49 @@ class SecondFragment : Fragment() {
         fun newInstance() = SecondFragment()
     }
 
-    private lateinit var viewModel: SecondViewModel
-    private var _binding: SecondFragmentBinding? = null
-    private val binding get() = _binding!!
-    private lateinit var adapter: MarsViewPagerAdapter
-
+    lateinit var itemTouchHelper: ItemTouchHelper
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = SecondFragmentBinding.inflate(inflater, container, false)
-        return binding.root
+
+        return inflater.inflate(R.layout.second_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        adapter = MarsViewPagerAdapter(childFragmentManager)
-        binding.MarsViewPager.adapter = adapter
-        viewModel = ViewModelProvider(this).get(SecondViewModel::class.java)
-        viewModel.getData().observe(viewLifecycleOwner) { render(it) }
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val data = arrayListOf(
+            Data("Earth") to false,
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
+            )
+        data.add(0, Data("Header") to false)
 
-    private fun render(it: MarsPicturesData) {
-        when (it) {
-            is MarsPicturesData.Success -> {
-                adapter.apply {
-                    list = it.serverResponseData.photos
-                    notifyDataSetChanged()
+        val adapter = RecyclerActivityAdapter(
+            object : RecyclerActivityAdapter.OnListItemClickListener {
+                override fun onItemClick(data: Pair<Data, Boolean>) {
+                    Toast.makeText(
+                        this@SecondFragment.context,
+                        data.first.someText,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-
+            }, data,
+            object : RecyclerActivityAdapter.OnStartDragListener {
+                override fun onStartDrag(viewHolder: RecyclerView.ViewHolder) {
+                    itemTouchHelper.startDrag(viewHolder)
+                }
             }
-            is MarsPicturesData.Loading -> {
+        )
 
-            }
-            is MarsPicturesData.Error -> {
+        recyclerView.adapter = adapter
 
-            }
+        fab.setOnClickListener {
+            adapter.appendItem()
         }
+
+        itemTouchHelper = ItemTouchHelper(ItemTouchHelperCallback(adapter))
+        itemTouchHelper.attachToRecyclerView(recyclerView)
     }
+
+
 }

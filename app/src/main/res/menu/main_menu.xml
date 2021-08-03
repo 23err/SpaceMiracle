@@ -55,4 +55,6 @@
         android:id="@+id/menu_animated_vector_drawable_activity"
         android:title="@string/animated_vector_drawable"
         app:showAsAction="never" />
+
+
 </menu>
