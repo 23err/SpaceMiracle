@@ -16,6 +16,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="loadingBackground">@color/opac_gray_200</item>
+        <item name="fontFamily">@font/abhaya_libre</item>
         <item name="backgroundColor">@color/white</item>
         <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.SmallAppearance</item>
         <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.MediumComponent</item>

@@ -1,10 +1,16 @@
 package com.example.spacemiracle
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
 import android.util.Log
+import android.util.TypedValue
 import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -118,7 +124,27 @@ class PictureOfTheDayFragment : Fragment() {
                 loadingVisible(false)
                 val serverResponseData = data.serverResponseData
 //                tvTitle.text = serverResponseData.title
-                tvTitle.animatedChangeText(fragmentContainer, serverResponseData.title)
+                var themePrimaryColor = Color.RED
+                activity?.apply {
+                    val typedValue = TypedValue()
+                    theme.resolveAttribute(android.R.attr.colorPrimary, typedValue, true)
+                    val themePrimaryColor = typedValue.data
+                }
+
+                val spannable = SpannableString(serverResponseData.title).apply {
+                    setSpan(
+                        ForegroundColorSpan(themePrimaryColor),
+                        0, 1,
+                        Spannable.SPAN_INCLUSIVE_EXCLUSIVE
+                    )
+                    setSpan(
+                        RelativeSizeSpan(2f),
+                        0,1,
+                        Spannable.SPAN_INCLUSIVE_EXCLUSIVE
+                    )
+                }
+
+                tvTitle.text = spannable
                 tvDescription.animatedChangeText(fragmentContainer, serverResponseData.explanation)
 
                 val url = serverResponseData.url
