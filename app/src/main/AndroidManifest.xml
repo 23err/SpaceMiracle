@@ -11,6 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/ThemeRed">
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".AnimatedVectorDrawableActivity" />
         <activity android:name=".ConstraintSetActivity" />
         <activity android:name=".StateListAnimatorActivity" />
@@ -27,13 +35,7 @@
         <activity android:name=".CoordinatorLayoutActivity" />
         <activity android:name=".ThirdActivity" />
         <activity android:name=".SecondActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
