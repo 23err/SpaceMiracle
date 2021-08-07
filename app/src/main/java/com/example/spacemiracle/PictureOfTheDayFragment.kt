@@ -135,12 +135,12 @@ class PictureOfTheDayFragment : Fragment() {
                     setSpan(
                         ForegroundColorSpan(themePrimaryColor),
                         0, 1,
-                        Spannable.SPAN_INCLUSIVE_EXCLUSIVE
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
                     )
                     setSpan(
                         RelativeSizeSpan(2f),
                         0,1,
-                        Spannable.SPAN_INCLUSIVE_EXCLUSIVE
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
                     )
                 }
 
